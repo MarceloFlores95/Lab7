@@ -125,7 +125,7 @@ app.delete('/bookmark/:id', (req,res) => {
     })
     console.log(bookmarkRemove)
     if(bookmarkRemove < 0) {
-        statusMessage = "The bookmark doesn´t exist";
+        res.statusMessage = "The bookmark doesn´t exist";
         return res.status(404).end();
     } else {
         bookmarks.splice(bookmarkRemove,1);
